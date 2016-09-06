@@ -1,0 +1,16 @@
+node_modules
+npm-debug.log
+
+# hide builded files on repo
+dists
+build/public/*
+static/vendors.js
+static/app.js
+!build/.gitkeep
+!build/public/favicon.ico
+
+src/app_/*
+App_
+
+.idea
+.DS_Store
