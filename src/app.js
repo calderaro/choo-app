@@ -7,7 +7,6 @@ import store from "./store";
 
 const app = choo()
 
-
 app.model({
   state: {
   	todos: [],
@@ -28,6 +27,23 @@ app.model({
   }
 })
 
+app.use({
+  onError: (err, state, createSend) => {
+    console.error(`error: ${err}`)
+  },
+  onStateChange: (data, state, prev, caller, createSend) => {
+    window.localStorage["log"] = JSON.stringify(state)
+  },
+  wrapInitialState: (obj) => {
+    try {
+      const log = JSON.parse(window.localStorage["log"]);
+      return {...obj, ...log};
+    } catch(e) {
+      return obj;
+    }
+  }
+})
+
 app.router((route) => [
   route('/', Home),
   route('/home', Home),
@@ -40,5 +56,5 @@ else app.start("#root");
 
 if(module.hot) {
   module.hot.accept();
-  app.start("#root")
+  app.start("#root");
 }
