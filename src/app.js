@@ -37,3 +37,8 @@ app.router((route) => [
 
 if (module.parent) module.exports = app;
 else app.start("#root");
+
+if(module.hot) {
+  module.hot.accept();
+  app.start("#root")
+}

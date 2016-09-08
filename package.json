@@ -16,6 +16,8 @@
     "choo": "^3.2.2",
     "compression": "^1.6.2",
     "express": "^4.14.0",
-    "webpack": "^1.13.2"
+    "webpack": "^1.13.2",
+    "webpack-dev-middleware": "^1.6.1",
+    "webpack-hot-middleware": "^2.12.2"
   }
 }

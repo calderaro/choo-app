@@ -1,20 +1,21 @@
 var path = require('path');
 var webpack = require('webpack');
+var hotMiddlewareScript = 'webpack-hot-middleware/client';
 
 module.exports = {
   //devtool: 'cheap-module-eval-source-map',
   entry: {
-    app: [path.join(__dirname, "../src/app.js")],
+    app: [path.join(__dirname, "../src/app.js"), hotMiddlewareScript],
   },
   output: {
-    path: path.resolve("./static"),
+    path: path.resolve("../static"),
     library: '[name]',
     filename: '[name].js',
     publicPath: '/static',
   },
   plugins: [
     new webpack.optimize.OccurenceOrderPlugin(),
-    //new webpack.HotModuleReplacementPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
     new webpack.optimize.DedupePlugin(),
     new webpack.NoErrorsPlugin()
   ],
