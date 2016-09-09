@@ -18,7 +18,7 @@ npm install
 ```bash
 npm start
 ```
-### Build for production
+### Build for production (not available now)
 ```bash
 npm run build
 ```
