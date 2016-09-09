@@ -16,6 +16,10 @@ npm install
 ```
 ### Run development server
 ```bash
+node index
+```
+Or
+```bash
 npm start
 ```
 ### Build for production (not available now)
