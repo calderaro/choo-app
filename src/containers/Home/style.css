@@ -1,0 +1,4 @@
+.container {
+	composes: container from "../style.css";
+	color: #6E6E6E;
+}

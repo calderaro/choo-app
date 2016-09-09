@@ -30,6 +30,13 @@ module.exports = {
           presets: ["es2015","stage-0"],
         }
       },
+      { 
+        test: /\.(css)$/,
+        loader: "style!css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!postcss-loader",
+      },
     ]
+  },
+  postcss() {
+    return [require('autoprefixer'), require('precss'), require('postcss-nested') ];
   },
 };

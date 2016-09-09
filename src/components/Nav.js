@@ -1,12 +1,12 @@
 import h from "choo/html";
+const style = module.parent ? {} : require("./style.css");
 
 const Nav = (content) => h`
-	<div>
+	<nav className=${style.nav}>
 		<a href="home">Home</a>
 		<a href="todo">Todos</a>
 		<a href="about">About</a>
-		<input />
-	</div>
+	</nav>
 `;
 
 export default Nav;

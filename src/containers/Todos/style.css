@@ -1,0 +1,16 @@
+.container {
+	composes: container from "../style.css";
+	color: #6E6E6E;
+	input {
+		border-radius: 4px;
+		padding: 0.5em 1em;
+		border: 1px solid #E6E6E6;
+	}
+	ul{
+		margin: 0;
+		padding: 0;
+	}
+	li{
+		list-style: none;
+	}
+}

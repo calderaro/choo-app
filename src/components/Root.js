@@ -1,8 +1,10 @@
 import h from "choo/html";
 import Nav from "./Nav";
+const style = module.parent ? {} : require("./style.css");
+
 
 const Root = (content) => h`
-	<div id="root">
+	<div id="root" class=${style.root}>
 		${Nav()}
 		${content}
 	</div>

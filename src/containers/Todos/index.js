@@ -1,18 +1,21 @@
 import html from "choo/html";
-import Root from "../components/Root";
+import Root from "../../components/Root";
+const style = module.parent ? {} : require("./style.css");
 
 const Todo = (state, prev, send) => {
   function onSubmit (e) {
+    e.preventDefault();
+
     const input = e.target.children[0]
-    send('addTodo', { title: input.value })
-    input.value = ''
-    e.preventDefault()
+    send("set", { title: input.value })
+    input.value = ""
   }
   function change(e, index) {
-    send('changeTodo', { data: { status: e.target.checked ? "completed" : "incomplete" }, index })
+    send("change", { data: { status: e.target.checked ? "completed" : "incomplete" }, index })
   }
+
   const view = html`
-    <div onload=${() => send('getTodos')}>
+    <div class=${style.container}>
       <form onsubmit=${onSubmit}>
         <input type="text" placeholder="New item" id="title">
       </form>
