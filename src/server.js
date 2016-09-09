@@ -11,8 +11,9 @@ import webpackConfig from "../configs/webpack.config.dev";
 const compiler = webpack(webpackConfig);
 const app = express();
 
-app.use(webpackDevMiddleware(compiler, { publicPath: webpackConfig.output.publicPath }))
-app.use(webpackHotMiddleware(compiler))
+app
+.use(webpackDevMiddleware(compiler, {	noInfo: true, publicPath: webpackConfig.output.publicPath }))
+.use(webpackHotMiddleware(compiler, { log: console.log }))
 
 app
 .use(compress())
