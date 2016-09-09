@@ -1,7 +1,7 @@
 {
-  "name": "choodo",
+  "name": "choo-app",
   "version": "1.0.0",
-  "description": "",
+  "description": "Testing the awesome choo library with babel, webpack, css-modules and hmr.",
   "main": "index.js",
   "scripts": {
     "start": "sudo node index",

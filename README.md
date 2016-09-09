@@ -1,14 +1,14 @@
 
 
-# chootest
+# Choo app
 ===============
-testing the awesome choo library with babel, webpack, css-modules and hmr.
+Testing the awesome choo library with babel, webpack, css-modules and hmr.
 
 ## Installation
 
 ### Clone
 ```bash
-git clone git@gitlab.com:calderaro941/pxo-webclient.git
+git clone git@github.com:calderaro/choo-app.git
 ```
 ### Install dependencies
 ```bash
